@@ -1,25 +1,23 @@
 import React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Typography from '@mui/material/Typography';
-// import { makeStyles } from '@material-ui/core/styles';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CreateRoom from "./routes/CreateRoom";
+import Room from "./routes/Room";
 
 import VideoPlayer from './components/VideoPlayer';
 import Notifications from './components/Notifications';
 import Options from './components/Options';
 
 const App = () => {
-
   return (
     <div>
-        <AppBar position='static' color="inherit">
-            <Typography variant='h2' align='center'>
-                Video Chat
-            </Typography>
-        </AppBar>
-        <VideoPlayer/>
-        <Options>
-            <Notifications/>
-        </Options>
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" exact element={<CreateRoom/>} />
+            <Route path="/room/:roomID" element={<Room />} />
+          </Routes>
+        </BrowserRouter>
     </div>
   )
 }
