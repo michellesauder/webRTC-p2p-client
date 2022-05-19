@@ -14,10 +14,12 @@ const StyledVideo = styled.video`
 `;
 
 const Room = () => {
-  const { myVideo, peers } = useContext(SocketContext);
+  const { myVideo, peers, setRoom } = useContext(SocketContext);
+  const { roomID } = useParams();
 
   const Video = ({ peer }) => {
     const ref = useRef();
+    setRoom(roomID);
 
     useEffect(() => {
         peer.on("stream", (stream) => {
