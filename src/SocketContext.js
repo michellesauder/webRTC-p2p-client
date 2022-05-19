@@ -104,6 +104,8 @@ const ContextProvider = ({ children }) => {
 
   }
 
+  //only one peer each
+
   const answerCall = () => {
     setCallAccepted(true);
 
