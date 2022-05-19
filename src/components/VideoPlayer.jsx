@@ -7,7 +7,6 @@ import { SocketContext } from '../SocketContext';
 
 const VideoPlayer = () => {
     const { name, callAccepted, myVideo, userVideo, call } = useContext(SocketContext);
-  
     return (
       <Grid container style={{display: 'flex', justifysContent: 'center'}}>
           <Paper>

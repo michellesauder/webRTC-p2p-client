@@ -7,7 +7,6 @@ import { SocketContext } from '../SocketContext';
 const Options = ({ children }) => {
     const { me, callAccepted, name, setName, callEnded, leaveCall, callUser  } = useContext(SocketContext);
     const [idToCall, setIdToCall] = useState('');
-    console.log({me})
 
   return (
     <Container
