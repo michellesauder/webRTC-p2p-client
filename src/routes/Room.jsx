@@ -16,14 +16,14 @@ const StyledVideo = styled.video`
 const Room = () => {
   const { myVideo, peers } = useContext(SocketContext);
 
-  const Video = ({peer}) => {
+  const Video = ({ peer }) => {
     const ref = useRef();
 
     useEffect(() => {
         peer.on("stream", (stream) => {
             ref.current.srcObject = stream;
         })
-    });
+    }, [peer]);
 
     return (
         <StyledVideo playsInline autoPlay ref={ref} />
