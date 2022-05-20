@@ -10,8 +10,8 @@ const { setRoom } = useContext(SocketContext);
   let navigate = useNavigate();
     const create = () => {
         const id = uuid();
-        navigate(`/room/${id}`);
         setRoom(id);
+        navigate(`/room/${id}`);
     }
 
     return (
